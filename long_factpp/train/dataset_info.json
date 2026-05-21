@@ -1,0 +1,54 @@
+{
+  "builder_name": "parquet",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "longfact-augmented-prompts",
+  "dataset_size": 5134393,
+  "description": "",
+  "download_size": 1996658,
+  "features": {
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "topic": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "difficulty": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "input_ids": {
+      "feature": {
+        "dtype": "int32",
+        "_type": "Value"
+      },
+      "_type": "List"
+    },
+    "attention_mask": {
+      "feature": {
+        "dtype": "int8",
+        "_type": "Value"
+      },
+      "_type": "List"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 7131051,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 5134393,
+      "num_examples": 20000,
+      "dataset_name": "longfact-augmented-prompts"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
