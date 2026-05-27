@@ -5,11 +5,14 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "torch>=2.6.0",
+    "datasets>=4.8.5",
+    "huggingface-hub>=1.16.0",
+    "ipykernel>=7.2.0",
+    "jupyterlab>=4.5.7",
+    "torch==2.6.0",
     "torchaudio>=2.6.0",
     "torchvision>=0.21.0",
+    "transformers>=5.9.0",
+    "vllm==0.8.5",
+    "wandb>=0.27.0",
 ]
-
-[[tool.uv.index]]
-url = "https://download.pytorch.org/whl/cu124"
-default = true

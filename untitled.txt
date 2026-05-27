@@ -1,0 +1,7 @@
+CUDA_HOME=/apps/pkg/cuda/12.8
+CUDA_ROOT=/apps/pkg/cuda/12.8
+LD_LIBRARY_PATH=/apps/pkg/cuda/12.8/lib64
+TORCH_CUDA_ARCH_LIST=8.0
+VLLM_CUDA_COMPATIBILITY_PATH=/apps/pkg/cuda/12.8/lib64import os
+print(os.environ["CUDA_HOME"])
+print(os.environ["LD_LIBRARY_PATH"])
