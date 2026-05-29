@@ -220,4 +220,5 @@ __marimo__/
 Data/
 .jsonl
 *.jsonl
-
+.wandb
+Utilities/wandb/
