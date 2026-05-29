@@ -34,4 +34,5 @@ uv add transformers==4.57.6 \
   huggingface_hub \
   wandb \
   jupyterlab \
-  ipykernel
+  ipykernel \
+  google-genai
