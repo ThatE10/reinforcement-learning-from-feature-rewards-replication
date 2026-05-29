@@ -1,0 +1,110 @@
+{
+  "os": "Linux-5.14.0-570.49.1.el9_6.x86_64-x86_64-with-glibc2.34",
+  "python": "CPython 3.10.18",
+  "startedAt": "2026-05-28T18:12:26.872800Z",
+  "program": "/users/enguye17/reinforcement-learning-from-feature-rewards-replication/Utilities/batch_size.py",
+  "codePath": "Utilities/batch_size.py",
+  "codePathLocal": "batch_size.py",
+  "git": {
+    "remote": "https://github.com/ThatE10/reinforcement-learning-from-feature-rewards-replication",
+    "commit": "7f20eb3097ffe970debc4ef6357a8fbf15ac2f75"
+  },
+  "email": "enguye17@charlotte.edu",
+  "root": "/users/enguye17/reinforcement-learning-from-feature-rewards-replication/Utilities",
+  "host": "str-gpu27.charlotte.edu",
+  "executable": "/users/enguye17/reinforcement-learning-from-feature-rewards-replication/.venv/bin/python3",
+  "cpu_count": 64,
+  "cpu_count_logical": 64,
+  "gpu": "NVIDIA L40S",
+  "gpu_count": 4,
+  "disk": {
+    "/": {
+      "total": "33501757440",
+      "used": "11785740288"
+    }
+  },
+  "memory": {
+    "total": "539919532032"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA L40S",
+      "memoryTotal": "48305799168",
+      "cudaCores": 18176,
+      "architecture": "Ada",
+      "uuid": "GPU-309e2c1b-a0cf-817b-c540-267adbb55353"
+    },
+    {
+      "name": "NVIDIA L40S",
+      "memoryTotal": "48305799168",
+      "cudaCores": 18176,
+      "architecture": "Ada",
+      "uuid": "GPU-1e0cb15f-3759-7053-3fdb-f30abffbb212"
+    },
+    {
+      "name": "NVIDIA L40S",
+      "memoryTotal": "48305799168",
+      "cudaCores": 18176,
+      "architecture": "Ada",
+      "uuid": "GPU-df31331d-d577-a7c0-c84c-8bb2b3349b15"
+    },
+    {
+      "name": "NVIDIA L40S",
+      "memoryTotal": "48305799168",
+      "cudaCores": 18176,
+      "architecture": "Ada",
+      "uuid": "GPU-fc38a126-a12a-7936-0bbc-c0f48b1e6724"
+    }
+  ],
+  "cudaVersion": "12.8",
+  "slurm": {
+    "array_job_id": "20086322",
+    "array_task_count": "1",
+    "array_task_id": "0",
+    "array_task_max": "0",
+    "array_task_min": "0",
+    "array_task_step": "1",
+    "cluster_name": "starlight",
+    "conf": "/var/spool/slurm/slurmd/conf-cache/slurm.conf",
+    "cpus_on_node": "16",
+    "cpus_per_task": "16",
+    "export_env": "NONE",
+    "get_user_env": "1",
+    "gpus_on_node": "4",
+    "gtids": "0",
+    "job_account": "staruser",
+    "job_cpus_per_node": "16",
+    "job_end_time": "1779999135",
+    "job_gid": "3943",
+    "job_gpus": "0,1,2,3",
+    "job_id": "20086322",
+    "job_name": "batch_size_test",
+    "job_nodelist": "str-gpu27",
+    "job_num_nodes": "1",
+    "job_partition": "Nebula_GPU",
+    "job_qos": "normal",
+    "job_start_time": "1779991935",
+    "job_uid": "3943",
+    "job_user": "enguye17",
+    "jobid": "20086322",
+    "localid": "0",
+    "mem_per_node": "204800",
+    "nnodes": "1",
+    "nodeid": "0",
+    "nodelist": "str-gpu27",
+    "nprocs": "1",
+    "ntasks": "1",
+    "ntasks_per_node": "1",
+    "oom_kill_step": "0",
+    "prio_process": "0",
+    "procid": "0",
+    "submit_dir": "/users/enguye17/reinforcement-learning-from-feature-rewards-replication/Utilities",
+    "submit_host": "str-gpu11.charlotte.edu",
+    "task_pid": "931720",
+    "tasks_per_node": "1",
+    "topology_addr": "str-gpu27",
+    "topology_addr_pattern": "node",
+    "tres_per_task": "cpu=16"
+  },
+  "writerId": "mi2f44o2m4ecn5p6c553uxcyerb8p6pj"
+}
