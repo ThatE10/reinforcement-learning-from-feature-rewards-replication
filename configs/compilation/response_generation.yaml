@@ -1,0 +1,8 @@
+BATCH_SIZE: 512
+max_tokens: 4096
+temperature: 1.0
+top_p: 0.95
+n_completions: 4
+tensor_parallel_size: 2
+dtype: "float16"
+gpu_memory_utilization: 0.9

@@ -1,0 +1,9 @@
+PROJECT_NAME: "rlffr"
+
+MODEL_NAME: "Qwen/Qwen3-8B"
+QUESTION_SRC: "obalcells/longfact-augmented-prompts"
+
+MODEL_CHECKPOINTS: "outputs/checkpoints"
+DATASET_OUTPUT_PATH: "outputs/dataset.jsonl"
+
+DATASET_LEN: 20000
