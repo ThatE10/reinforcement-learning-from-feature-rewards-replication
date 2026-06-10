@@ -29,5 +29,18 @@ uv add transformers==4.57.6 \
   wandb \
   jupyterlab \
   ipykernel \
-  google-genai
+  google-genai \
+  prefect
 ```
+
+If you already don't have a dataset used for trainign your transformer probes you will have to setup a prefect server.  This will likely be a headache for some at times:
+
+#todo: possible progres migration: prefect config set PREFECT_API_DATABASE_CONNECTION_URL="postgresql+asyncpg://postgres:yourTopSecretPassword@localhost:5432/prefect"
+
+``` 
+prefect server start
+prefect config set PREFECT_API_URL="http://127.0.0.1:4200/api"
+```
+
+By default your dataset will be stored in ~/.prefect/prefect.db. No additional configuration is needed for basic use.
+
