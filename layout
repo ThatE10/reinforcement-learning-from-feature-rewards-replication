@@ -1,0 +1,142 @@
+hallucination_probe/
+├── README.md
+├── pyproject.toml
+├── .env.example
+│
+├── configs/
+│   ├── base.yaml
+│   ├── compilation/
+│   │   └── default.yaml
+│   ├── probes/
+│   │   ├── localization.yaml
+│   │   ├── validation.yaml
+│   │   └── intervention.yaml
+│   ├── training/
+│   │   ├── scale_rl.yaml
+│   │   └── cispo.yaml
+│   └── evaluation/
+│       └── default.yaml
+│
+├── prompts/                          ← versioned prompt templates (plain text)
+│   ├── claim_extraction.txt
+│   ├── claim_validation.txt
+│   ├── correction_generation.txt
+│   └── response_evaluation.txt
+│
+├── src/
+│   ├── __init__.py
+│   │
+│   ├── data/
+│   │   ├── __init__.py
+│   │   ├── schemas.py                ← Pydantic v2 contracts for all pipeline I/O
+│   │   ├── dataset.py                ← PyTorch Dataset + HuggingFace Dataset wrappers
+│   │   ├── loaders.py                ← JSONL / HF Hub ingestion utilities
+│   │   └── writers.py                ← JSONL writer with atomic flush + checkpointing
+│   │
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── base.py                   ← BaseLanguageModel, BaseOracle, ModelRegistry
+│   │   ├── student.py                ← HuggingFace student model implementation
+│   │   ├── teacher.py                ← API-based teacher model (OpenAI / Anthropic)
+│   │   └── oracle.py                 ← WebSearchOracle, RAGOracle implementations
+│   │
+│   ├── compilation/
+│   │   ├── __init__.py
+│   │   ├── generator.py              ← ResponseGenerator
+│   │   ├── claim_extractor.py        ← ClaimExtractor (teacher + structured output)
+│   │   ├── claim_validator.py        ← ClaimValidator (teacher + oracle)
+│   │   ├── corrector.py              ← ResponseCorrector (student + tag tokens)
+│   │   ├── evaluator.py              ← ResponseEvaluator (teacher + token scoring)
+│   │   └── pipeline.py               ← CompilationPipeline orchestrator
+│   │
+│   ├── probes/
+│   │   ├── __init__.py
+│   │   ├── base.py                   ← BaseProbe (nn.Module + ABC)
+│   │   ├── activation_extractor.py   ← ActivationExtractor (PyTorch forward hooks)
+│   │   ├── localization.py           ← LocalizationProbe (logistic regression head)
+│   │   ├── validation.py             ← ValidationProbe (softmax MLP head)
+│   │   ├── intervention.py           ← InterventionProbe (quality MLP head)
+│   │   └── trainer.py                ← ProbeTrainer + ActivationDataset
+│   │
+│   ├── training/
+│   │   ├── __init__.py
+│   │   ├── reward.py                 ← RewardFunction (probe-weighted composite)
+│   │   ├── scale_rl.py               ← ScaleRLTrainer
+│   │   ├── cispo.py                  ← CISPOTrainer
+│   │   └── trainer.py                ← Main RL training loop with checkpointing
+│   │
+│   ├── evaluation/
+│   │   ├── __init__.py
+│   │   ├── sampling.py               ← BestOfNSampler
+│   │   ├── consensus.py              ← MajorityConsensus
+│   │   ├── retraction.py             ← RetractionDetector
+│   │   └── metrics.py                ← MetricsCompiler + EvaluationMetrics
+│   │
+│   └── utils/
+│       ├── __init__.py
+│       ├── logging.py                ← structured logging (loguru)
+│       ├── io.py                     ← JSONL helpers, atomic write primitives
+│       └── viz.py                    ← matplotlib / seaborn helpers
+│
+├── tests/
+│   ├── conftest.py                   ← root fixtures: mock models, sample records
+│   ├── fixtures/
+│   │   ├── sample_dataset.jsonl      ← 10-record fixture for integration tests
+│   │   └── sample_activations.pt     ← pre-saved synthetic activation tensors
+│   │
+│   ├── unit/
+│   │   ├── conftest.py               ← unit-specific mocks (no I/O, no GPU)
+│   │   ├── data/
+│   │   │   └── test_schemas.py
+│   │   ├── compilation/
+│   │   │   ├── test_generator.py
+│   │   │   ├── test_claim_extractor.py
+│   │   │   ├── test_claim_validator.py
+│   │   │   ├── test_corrector.py
+│   │   │   └── test_evaluator.py
+│   │   ├── probes/
+│   │   │   ├── test_activation_extractor.py
+│   │   │   ├── test_localization.py
+│   │   │   ├── test_validation.py
+│   │   │   └── test_intervention.py
+│   │   ├── training/
+│   │   │   ├── test_reward.py
+│   │   │   └── test_trainer.py
+│   │   └── evaluation/
+│   │       ├── test_sampling.py
+│   │       ├── test_consensus.py
+│   │       ├── test_retraction.py
+│   │       └── test_metrics.py
+│   │
+│   └── integration/
+│       ├── conftest.py               ← heavier fixtures (real tokenisers, disk I/O)
+│       ├── test_compilation_pipeline.py
+│       ├── test_probe_pipeline.py
+│       └── test_evaluation_pipeline.py
+│
+├── scripts/
+│   ├── run_compilation.py
+│   ├── run_probe_training.py
+│   ├── run_training.py
+│   └── run_evaluation.py
+│
+├── demos/
+│   ├── notebooks/
+│   │   ├── 01_compilation_walkthrough.ipynb
+│   │   ├── 02_dataset_explorer.ipynb
+│   │   ├── 03_probe_training.ipynb
+│   │   ├── 04_training_loop.ipynb
+│   │   └── 05_evaluation_and_metrics.ipynb
+│   ├── validation_probe_demo/
+│   │   ├── app.py                    ← Gradio interface for ValidationProbe
+│   │   ├── demo_utils.py
+│   │   └── requirements.txt
+│   └── dataset_explorer/
+│       ├── app.py                    ← Streamlit JSONL dataset browser
+│       ├── components.py
+│       └── requirements.txt
+│
+└── outputs/                          ← gitignored (except .gitkeep sentinels)
+    ├── datasets/
+    ├── checkpoints/
+    └── results/
