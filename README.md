@@ -44,3 +44,5 @@ prefect config set PREFECT_API_URL="http://127.0.0.1:4200/api"
 
 By default your dataset will be stored in ~/.prefect/prefect.db. No additional configuration is needed for basic use.
 
+
+Note it is unclear within the retraction/correction pipeline if the corrected mistakes will be included within the training methodology IE will you have a response with multiple retractions within it?
