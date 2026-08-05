@@ -1,7 +1,7 @@
 [project]
 name = "reinforcement-learning-from-feature-rewards-replication"
 version = "0.1.0"
-description = "Add your description here"
+description = "Reduced-scale replication of Goodfire's Reinforcement Learning from Feature Rewards (RLFR), using interpretability features as reward functions to reduce hallucination in open-ended generation."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [

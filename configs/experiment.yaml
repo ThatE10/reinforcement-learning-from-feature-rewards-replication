@@ -1,0 +1,14 @@
+# Experiment configuration for a replication run.
+seed: 31415
+
+# Number of student responses sampled per generation pass.
+student_response_msg: 500
+# Multiplies student_response_msg to get the total sampled responses.
+student_response_repeat: 1
+
+# Non-recoverable-entity (NRE) budget for the claim verification stage.
+max_nre_count: 2000
+num_nre_to_validate: 500
+
+# Corrections generated per flagged response during the intervention stage.
+num_of_corrections_generated: 50
