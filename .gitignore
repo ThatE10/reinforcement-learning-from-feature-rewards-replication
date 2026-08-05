@@ -217,8 +217,12 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-Data/
-.jsonl
+# Project artifacts
+data/*.jsonl
+data/logs/
 *.jsonl
 .wandb
-Utilities/wandb/
+wandb/
+
+# Secrets
+.env
